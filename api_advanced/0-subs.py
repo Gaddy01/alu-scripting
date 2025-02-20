@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
 This module queries the Reddit API to retrieve the number of subscribers 
 for a given subreddit. It handles invalid subreddits by returning 0.
