@@ -15,10 +15,10 @@ def top_ten(subreddit):
         return
     try:
         data = response.json()
-        posts = data.get('data', {}).get('children', [])    
+        posts = data.get('data', {}).get('children', [])
         if not posts:  # If there are no posts, handle it properly
             print("OK")
-            return 
+            return
         for post in posts:
             print(post['data']['title'])
     except (KeyError, ValueError):
