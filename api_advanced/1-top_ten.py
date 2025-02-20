@@ -3,7 +3,11 @@
 import requests
 
 def top_ten(subreddit):
-    """Prints the titles of the first 10 hot posts listed in a subreddit"""
+    """Queries the Reddit API and prints the titles of the first 10 hot posts listed for a given subreddit.
+    Parameters:
+    subreddit (str): The name of the subreddit to query.
+    Returns:
+    None: If the subreddit is invalid or if an error occurs."""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'MyRedditBot/0.1'}
     params = {'limit': 10}  # Ensure we only get 10 posts
