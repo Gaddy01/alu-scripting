@@ -13,14 +13,17 @@ def top_ten(subreddit):
     # Check if the response is valid
     if response.status_code != 200:
         sys.stdout.write("OK")  # No newline or extra spaces
+        sys.stdout.flush()  # Force output immediately
         return
     try:
         data = response.json()
         posts = data.get('data', {}).get('children', [])
         if not posts:  # If there are no posts, handle it properly
             sys.stdout.write("OK")
+            sys.stdout.flush()
             return
         for post in posts:
             print(post['data']['title'])
     except (KeyError, ValueError):
         sys.stdout.write("OK")
+        sys.stdout.flush()
